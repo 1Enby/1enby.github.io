@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Charity Support Tabs</title>
+    <style>
+        body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  a:link{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+
+}
+a:visited{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+a:hover{
+  
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+
+}
+a:active{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+
+}
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+  }
+/* CSS for tabs */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.tab {
+  position: relative;
+  display: inline-block;
+  margin: 0 20px;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+}
+
+.tab::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.tab:hover {
+  background-color: #ffb6c1;
+  color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background-color: #fff;
+  color: #333;
+}
+
+.tab.active::after {
+  transform: scaleY(1);
+}
+
+/* CSS for tab content */
+.tabcontent {
+  position: relative;
+  display: none;
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  margin-right: 250px;
+  margin-left: 250px;
+  text-mar
+}
+
+.tabcontent p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin-right: 250px;
+  margin-left: 250px;
+}
+
+.tabcontent h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+  margin-right: 250px;
+  margin-left: 250px;
+}
+
+.tabcontent:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translateX(-50%) rotate(45deg);
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+/* New CSS for hover effect on active tab */
+.tab.active:hover {
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* New CSS for active tab on mobile */
+@media screen and (max-width: 600px) {
+  .tab.active {
+    background-color: #ffb6c1;
+    color: white;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; margin-top: 50px;"><a href="MainPage.html">Support These Charities</a></h1>
+    <div class="tab-container">
+      <div class="tab active" onclick="openTab(event, 'tab1')">Steve Fund</div>
+      <div class="tab" onclick="openTab(event, 'tab2')">Cybersmile Foundation</div>
+      <div class="tab" onclick="openTab(event, 'tab3')">Youth Mental Health Project</div>
+      <div class="tab" onclick="openTab(event, 'tab4')">We R Native</div>
+      <div class="tab" onclick="openTab(event, 'tab5')">The Trevor Project</div>
+      <div class="tab" onclick="openTab(event, 'tab6')">Child Mind Institute</div>
+      <div class="tab" onclick="openTab(event, 'tab7')">On Our Sleeves</div>
+    </div>
+    <div id="tab1" class="tabcontent" style="display: block;">
+      <h2>Steve Fund</h2>
+      <p>The Steve Fund is dedicated to supporting mental health and emotional well being for young people of color. Because mental health is poorly understood and not acted on, many young people of color are failing academically, suffering emotionally and facing serious risk. The Steve Fund takes action by providing help and support for the future generations.<br>Learn More: <a href="https://www.stevefund.org">Here</a></p>
+      </div>
+      <div id="tab2" class="tabcontent">
+      <h2>Cybersmile Foundation</h2>
+      <p>The Cybersmile Foundation is committed to making the online world a safe place. Promoting digital wellbeing and tackling all forms of bullying and abuse online, the Cybersmile Foundation is one of the world's leading anti-cyberbullying and digital wellbeing organizations. The organization empowers those affected by cyberbullying to regain control of their lives<br>Learn More: <a href="https://www.cybersmile.org/">Here</a></p>
+      </div>
+      <div id="tab3" class="tabcontent">
+      <h2>Youth Mental Health Project:</h2>
+      <p>The Youth Mental Health Project educates and better equips families to  care for the mental health of their child. Their goal is to create a world where people are just as aware of their mental health as their physical health, and families are able to access the care they need.<br>Learn More:<a href="https://ymhproject.org/">Here</a></p>
+      </div>
+      <div id="tab4" class="tabcontent">
+        <h2>We R Native:</h2>
+        <p>TWe R Native is an interactive health resource website that targets Native American youth. The website offers a platform for young people to connect, share their stories, and access information on health and wellness. Through its engaging content and resources, We R Native promotes positive mental, physical, and emotional health among Native American youth communities.
+          <br>Learn More:<a href="https://www.wernative.org">Here<a></p>
+        </div>
+        <div id="tab5" class="tabcontent">
+            <h2>The Trevor Project:</h2>
+            <p>The Trevor Project is a leading organization in providing crisis intervention and suicide prevention services to LGBTQ+ youth. Their website offers a range of resources including a 24/7 hotline, online chat services, and a wealth of educational materials. The Trevor Project's mission is to create a safe and supportive environment for LGBTQ+ youth, and their website serves as a crucial tool in achieving this goal.<br>Learn More:<a href="https://www.thetrevorproject.org/">Here<a></p>
+            </div>
+            <div id="tab6" class="tabcontent">
+              <h2>Child Mind Institute:</h2>
+              <p>The Child Mind Institute is a nonprofit organization dedicated to helping children and families affected by mental illness and learning disorders. They provide comprehensive clinical care, online resources, and school and community-based programs to improve the lives of children and families. The institute also conducts research to advance understanding and treatment of mental health and learning disorders in children.
+                <br>Learn More:<a href="https://childmind.org/">Here<a></p>
+              </div>
+              <div id="tab7" class="tabcontent">
+                <h2>On Our Sleeves:</h2>
+                <p>On Our Sleeves is an organization that aims to support children's mental health. Their website provides resources, programs, and education on mental health issues for parents, educators, and children. Through their work, they hope to reduce the stigma surrounding mental illness and provide support for those who need it.
+                  <br>Learn More:<a href="https://www.onoursleeves.org/">Here<a></p>
+                </div>
+      <script>
+        function openTab(evt, tabName) {
+          var i, tabcontent, tab;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tab = document.getElementsByClassName("tab");
+          for (i = 0; i < tab.length; i++) {
+            tab[i].className = tab[i].className.replace(" active", "");
+          }
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+      </script>
+    </body>
