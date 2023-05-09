@@ -1,47 +1,145 @@
-html, body, #root, #app{
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-  }
-  
-  body{
-    overflow-x: hidden;
-  }
-  
-  #app{
-    div, h1, h2, h3, h4, h5, h6, input, button, li{
-      font-family: 'Roboto', sans-serif;
-    }
-    
-    #app-content{
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      
-      .my-tab-content{
-        height: 300px;
-        .tab-icon{
-          left: 50%;
-          position: absolute;
-          top: 50%;
-          transform: translateX(-50%) translateY(-50%);
-          i{
-            color: rgb(240,240,240);
-            font-size: 10em;
-          }
-  
-          h1{
-            color: rgb(200,200,200);
-            font-size: 0.9em;
-            font-weight: 100;
-            margin: 0px;
-            margin-top: 10px;
-            text-align: center;
-          }
-        }
-      }
-    }
-  }
-    
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+a:link{
+text-decoration: none;
+color: rgb(0, 0, 0);
+
+}
+a:visited{
+text-decoration: none;
+color: rgb(0, 0, 0);
+}
+a:hover{
+
+text-decoration: none;
+color: rgb(0, 0, 0);
+
+}
+a:active{
+text-decoration: none;
+color: rgb(0, 0, 0);
+
+}
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+}
+/* CSS for tabs */
+.tab-container {
+display: flex;
+justify-content: center;
+margin: 50px 0;
+}
+
+.tab {
+position: relative;
+display: inline-block;
+margin: 0 20px;
+padding: 10px 20px;
+background-color: #f1f1f1;
+border: none;
+color: #333;
+font-size: 16px;
+font-weight: bold;
+letter-spacing: 1px;
+text-transform: uppercase;
+cursor: pointer;
+transition: all 0.2s ease-in-out;
+z-index: 1;
+}
+
+.tab::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #fff;
+transform: scaleY(0);
+transform-origin: bottom;
+transition: transform 0.3s ease;
+z-index: -1;
+}
+
+.tab:hover {
+background-color: #ffb6c1;
+color: white;
+box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+transform: translateY(-2px);
+}
+
+.tab.active {
+background-color: #fff;
+color: #333;
+}
+
+.tab.active::after {
+transform: scaleY(1);
+}
+
+/* CSS for tab content */
+.tabcontent {
+position: relative;
+display: none;
+text-align: center;
+padding: 50px 20px;
+background-color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+z-index: 2;
+margin-right: 15em;
+margin-left: 15em;
+text-mar
+}
+
+.tabcontent p {
+font-size: 16px;
+line-height: 1.5;
+color: #333;
+margin-right: 15em;
+margin-left: 15em;
+}
+
+.tabcontent h2 {
+margin-top: 0;
+font-size: 24px;
+color: #333;
+margin-right: 250px;
+margin-left: 250px;
+}
+
+.tabcontent:before {
+content: "";
+position: absolute;
+top: -10px;
+left: 50%;
+width: 20px;
+height: 20px;
+transform: translateX(-50%) rotate(45deg);
+background-color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+z-index: -1;
+}
+
+/* New CSS for hover effect on active tab */
+.tab.active:hover {
+background-color: #fff;
+box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+transform: translateY(-2px);
+}
+
+/* New CSS for active tab on mobile */
+@media screen and (max-width: 600px) {
+.tab.active {
+  background-color: #ffb6c1;
+  color: white;
+  box-shadow: none;
+  transform: none;
+}
+}
